@@ -45,8 +45,8 @@ public class Main extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(this, this);
 		PluginDescriptionFile pdfile = this.getDescription();
 		System.out.println(NoticeChatcolor + "==================================================");
-		System.out.println(NoticeChatcolor + "[Test] Á¦ÀÛÀÚ : FrNomad");
-		System.out.println(NoticeChatcolor + "[Test] " + pdfile.getName() + " " + pdfile.getVersion() + " ¹öÀüÀÌ ½ÇÇà ¿Ï·áµÊ.");
+		System.out.println(NoticeChatcolor + "[Test] ì œì‘ì : FrNomad");
+		System.out.println(NoticeChatcolor + "[Test] " + pdfile.getName() + " " + pdfile.getVersion() + " ë²„ì „ì´ ì‹¤í–‰ ì™„ë£Œë¨.");
 		System.out.println(NoticeChatcolor + "==================================================");
 	}
 	
@@ -54,7 +54,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void onDisable() {
 		PluginDescriptionFile pdfile = this.getDescription();
 		System.out.println(NoticeChatcolor + "==================================================");
-		System.out.println(NoticeChatcolor + "[Test] " + pdfile.getName() + " " + pdfile.getVersion() + " ¹öÀüÀÌ ²¨Áü.");
+		System.out.println(NoticeChatcolor + "[Test] " + pdfile.getName() + " " + pdfile.getVersion() + " ë²„ì „ì´ êº¼ì§.");
 		System.out.println(NoticeChatcolor + "==================================================");
 	}
 	
@@ -62,26 +62,26 @@ public class Main extends JavaPlugin implements Listener {
 	public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
 		if(label.equalsIgnoreCase("minecartspeed")) {
 			if(args.length < 1) {
-				s.sendMessage(format("&cºü¸£±â¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À."));
+				s.sendMessage(format("&cë¹ ë¥´ê¸°ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤."));
 				return false;
 			}
 			else if(args[0].equalsIgnoreCase("now")) {
 				double speed = (trainspeed / 0.4D) * 28.8D;
-				s.sendMessage(format("&6ÇöÀç ¸¶ÀÎÄ«Æ®ÀÇ ¼Ó·ÂÀº &a" + speed + "km/h &6ÀÔ´Ï´Ù."));
-				s.sendMessage(format("&6ÇöÀç ¸¶ÀÎÄ«Æ®ÀÇ ¼Ó·ÂÀº &a" + trainspeed + "m/tick &6ÀÔ´Ï´Ù."));
+				s.sendMessage(format("&6í˜„ì¬ ë§ˆì¸ì¹´íŠ¸ì˜ ì†ë ¥ì€ &a" + speed + "km/h &6ì…ë‹ˆë‹¤."));
+				s.sendMessage(format("&6í˜„ì¬ ë§ˆì¸ì¹´íŠ¸ì˜ ì†ë ¥ì€ &a" + trainspeed + "m/tick &6ì…ë‹ˆë‹¤."));
 			}
 			else {
 				try {
 					double speed = Double.parseDouble(args[0]);
 					if(speed < 0) {
-						s.sendMessage(format("&c¼Ó·ÂÀº À½¼ö°¡ µÉ ¼ö ¾ø½À´Ï´Ù."));
+						s.sendMessage(format("&cì†ë ¥ì€ ìŒìˆ˜ê°€ ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤."));
 					}
 					else {
 						trainspeed = (speed / 28.8D) * 0.4D;
-						s.sendMessage(format("&6¸¶ÀÎÄ«Æ®ÀÇ ¼Ó·ÂÀÌ &a" + speed + "km/h &6·Î ¼³Á¤µÇ¾ú½À´Ï´Ù."));
+						s.sendMessage(format("&6ë§ˆì¸ì¹´íŠ¸ì˜ ì†ë ¥ì´ &a" + speed + "km/h &6ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤."));
 					}
 				} catch(NumberFormatException e) {
-					s.sendMessage(format("&c¾Ë¸ÂÀº ¼ö¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿À."));
+					s.sendMessage(format("&cì•Œë§ì€ ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹­ì‹œì˜¤."));
 				}
 			}
 		}
